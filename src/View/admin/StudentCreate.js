@@ -1,13 +1,11 @@
 import React from 'react';
-import {Observer, useLocalObservable} from "mobx-react";
-import StudentStore from "../../Store/StudentStore";
+import {Observer} from "mobx-react";
 
-const StudentCreate = () => {
-const studentStore = useLocalObservable(()=>new StudentStore())
 
+const StudentCreate = ({studentStore}) => {
   return (
     <div>
-      <p onClick={studentStore.createStudent}>학생 추가</p>
+      <p>학생 추가</p>
       <Observer>
         {()=> (
           <form onSubmit={studentStore.createStudent}>
