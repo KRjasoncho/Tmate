@@ -7,10 +7,10 @@ const SignUp = () => {
 
   return (
     <div>
-      <p>회원가입</p>
+      <p >회원가입</p>
       <Observer>
         {() => (
-          <form>
+          <form onSubmit={loginStore.signUpHandler}>
             <div>
               <label htmlFor='name'>아이디</label>
               <input type='text' id='id' value={loginStore.signUpForm.id} name='id'
