@@ -7,7 +7,7 @@ const Main = () => {
     <div className={classes.mainWrapper}>
       <p>간편한 회원가입으로 바로 Tmate 시작하기</p>
       <p>최고의 과외 학생 관리 시스템을 체험하세요.</p>
-      <Link to='/adminMain'>Tmate 시작하기</Link>
+      <Link to='/loginMain'>Tmate 시작하기</Link>
     </div>
   );
 };
