@@ -13,7 +13,7 @@ const LoginMain = () => {
           <input type='password'/>
         </div>
       </form>
-      <Link to='/'>회원가입 하기</Link>
+      <Link to='/signUp'>회원가입 하기</Link>
     </div>
   );
 };
