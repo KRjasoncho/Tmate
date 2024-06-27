@@ -1,13 +1,13 @@
 import {makeAutoObservable, runInAction} from "mobx";
 import axios from "axios";
 
-class LoginStore{
+class LoginStore {
 
   //state
-  signUpForm ={
-    id:'',
-    password:'',
-    nickName:''
+  signUpForm = {
+    id: '',
+    password: '',
+    nickName: ''
   }
 
   constructor() {
@@ -15,21 +15,20 @@ class LoginStore{
   }
 
   //action
-  inputHandler =(e)=>{
+  inputHandler = (e) => {
     const {name, value} = e.target;
-    this.signUpForm[name]= value;
+    this.signUpForm[name] = value;
   }
-  signUpHandler =()=>{
-  axios.post('api/user/create', {...this.signUpForm})
-    .then(res=>
-    runInAction(()=>
-      console.log(res)
-    ))
-    .catch(err=>
-    runInAction(()=>console.log(err)))
+  signUpHandler = () => {
+    axios.post('api/user/create', {...this.signUpForm})
+      .then(res =>
+        runInAction(() =>
+          console.log(res)
+        ))
+      .catch(err =>
+        runInAction(() => console.log(err)))
   }
 }
-
 
 
 export default LoginStore;
