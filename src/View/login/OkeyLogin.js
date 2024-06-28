@@ -5,7 +5,7 @@ const OkeyLogin = () => {
   return (
     <div>
       <p>
-      로그인에 성공했습니다.
+        {JSON.parse(localStorage.getItem("user")).nickName} 선생님 환영합니다.
       </p>
       <Link to='/adminMain'>
         학생 관리창으로 이동

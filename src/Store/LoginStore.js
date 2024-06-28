@@ -31,7 +31,7 @@ class LoginStore {
     axios.post('api/user/create', {...this.signUpForm})
       .then(res =>
         runInAction(() =>
-          console.log(res)
+          window.location.replace("/loginMain")
         ))
       .catch(err =>
         runInAction(() => console.log(err)))
@@ -52,6 +52,11 @@ class LoginStore {
         runInAction(() => {
           console.log(err);
         }))
+  }
+  logoutHanlder =()=>{
+    localStorage.removeItem('user');
+    localStorage.removeItem('loginState');
+    window.location.replace('/AdminMain');
   }
 }
 
