@@ -36,14 +36,22 @@ class LoginStore {
       .catch(err =>
         runInAction(() => console.log(err)))
   }
-  loginHandler = ()=>{
-    axios.post('api/user/login', {...this.loginForm })
-      .then(res=>
-      runInAction(()=>
-      console.log(res)
-      ))
-      .catch(err=>
-      runInAction(()=> console.log(err)))
+  loginHandler = () => {
+    axios.post('api/user/login', { ...this.loginForm })
+      .then(res => {
+        if (res !== null && res.data) {
+          runInAction(() => {
+            localStorage.setItem(`user`, JSON.stringify(res.data));
+            localStorage.setItem("loginState", 'okey')
+          });
+        } else {
+          window.alert('잘못된 아이디입니다.');
+        }
+      })
+      .catch(err =>
+        runInAction(() => {
+          console.log(err);
+        }))
   }
 }
 
