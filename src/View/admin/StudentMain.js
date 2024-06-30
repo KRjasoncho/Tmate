@@ -7,7 +7,7 @@ import EditStudent from "./EditStudent";
 import LoginStore from "../../Store/LoginStore";
 import NotOkeyLogin from "../login/NotOkeyLogin";
 
-const AdminMain = () => {
+const StudentMain = () => {
   const studentStore = useLocalObservable(() => new StudentStore())
   const loginStore = useLocalObservable(() => new LoginStore())
   return (
@@ -30,4 +30,4 @@ const AdminMain = () => {
   );
 };
 
-export default AdminMain;
+export default StudentMain;
